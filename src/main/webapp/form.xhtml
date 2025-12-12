@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="jakarta.faces.core"
+      xmlns:h="jakarta.faces.html"
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:p="primefaces">
+<f:view>
+    <h:head>
+        <title>web3</title>
+        <link rel="stylesheet" href="style/main.css"/>
+    </h:head>
+    <h:body>
+        <header>
+            <table id="header-table">
+                <tr>
+                    <td><p>Захарченко<br/>Андрей<br/>Сергеевич</p></td>
+                    <td><p>Группа: <br/>P3214</p></td>
+                    <td><p>Вариант: <br/>465951</p></td>
+                </tr>
+            </table>
+        </header>
+        <table id="main_table" class="layout-table">
+            <tr>
+                <td>
+                    <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg" viewBox="50 50 400 400">
+                        <rect fill="#ffffff"
+                              width="600"
+                              height="600"/>
+                        <rect fill="#6399f7"
+                              width="120" height="120"
+                              x="130" y="130"/>
+                        <path d="M 250 190 A 60 60 0 0 1 310 250 L 250 250 Z" fill="#6399f7"/>
+                        <polygon fill="#6399f7" points="250,250 370,250, 250,370"/>
+                        <line stroke="black" stroke-width="2"
+                              x1="70" y1="250"
+                              x2="430" y2="250"/>
+                        <line stroke="black" stroke-width="2"
+                              x1="250" y1="70"
+                              x2="250" y2="430"/>
+
+                        <line stroke="black" stroke-width="2"
+                              x1="370" y1="253"
+                              x2="370" y2="247"/>
+                        <line stroke="black" stroke-width="2"
+                              x1="310" y1="253"
+                              x2="310" y2="247"/>
+                        <line stroke="black" stroke-width="2"
+                              x1="190" y1="253"
+                              x2="190" y2="247"/>
+                        <line stroke="black" stroke-width="2"
+                              x1="130" y1="253"
+                              x2="130" y2="247"/>
+                        <line stroke="black" stroke-width="2"
+                              x1="253" y1="370"
+                              x2="247" y2="370"/>
+                        <line stroke="black" stroke-width="2"
+                              x1="253" y1="310"
+                              x2="247" y2="310"/>
+                        <line stroke="black" stroke-width="2"
+                              x1="253" y1="190"
+                              x2="247" y2="190"/>
+                        <line stroke="black" stroke-width="2"
+                              x1="253" y1="130"
+                              x2="247" y2="130"/>
+
+                        <text id="mR" x="120" y="240" font-size="20" font-family="monospace">-R</text>
+                        <text id="mR2" x="180" y="240" font-size="20" font-family="monospace">-R/2</text>
+                        <text id="R2" x="300" y="240" font-size="20" font-family="monospace">R/2</text>
+                        <text id="R" x="360" y="240" font-size="20" font-family="monospace">R</text>
+                        <text id="R" x="257" y="135" font-size="20" font-family="monospace">R</text>
+                        <text id="R2" x="257" y="195" font-size="20" font-family="monospace">R/2</text>
+                        <text id="mR2" x="257" y="315" font-size="20" font-family="monospace">-R/2</text>
+                        <text id="mR" x="257" y="375" font-size="20" font-family="monospace">-R</text>
+                    </svg>
+                </td>
+                <td>
+                    <h:form id="calculate_form">
+                        <!-- Группа для координаты X -->
+                        <fieldset>
+                            <legend>
+                                X: <h:outputText value="#{pointBean.x}"/>
+                            </legend>
+                            <ui:repeat value="#{[-5,-4,-3,-2,-1,0,1,2,3]}" var="value">
+                                <h:commandLink value="#{value}" rendered="#{pointBean.x!=value}">
+                                    <f:setPropertyActionListener target="#{pointBean.x}" value="#{value}"/>
+                                </h:commandLink>
+                                <h:commandLink value="#{value}" rendered="#{pointBean.x==value}" style="color: aqua">
+                                    <f:setPropertyActionListener target="#{pointBean.x}" value="#{value}"/>
+                                </h:commandLink>
+                                <h:outputText value=" | " rendered="#{value != 3}" escape="false"/>
+                            </ui:repeat>
+                        </fieldset>
+
+                        <!-- Группа для координаты Y -->
+                        <fieldset>
+                            <legend>
+                                Y:
+                            </legend>
+                            <p:inputNumber minValue="-5" maxValue="3" value="#{pointBean.y}" />
+                        </fieldset>
+
+                        <!-- Группа для координаты R -->
+                        <fieldset>
+                            <legend>
+                                R:
+                            </legend>
+                            <p:inputNumber minValue="2" maxValue="5" value="#{pointBean.r}" />
+                        </fieldset>
+
+                        <h:commandButton value="получить результат" actionListener="#{pointBean.submit()}" />
+                    </h:form>
+                </td>
+            </tr>
+        </table>
+    </h:body>
+</f:view>
+</html>

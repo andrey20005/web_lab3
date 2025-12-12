@@ -1,0 +1,115 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body a {
+    color: #e0e0e0;
+}
+
+p {
+    margin: 5px;
+}
+
+header {
+    background-color: #1f1f1f;
+    border-bottom: 2px solid #333;
+    padding: 10px;
+}
+
+header p {
+    color: #c6f9ff;
+    margin: 5px;
+}
+
+#header-table {
+    width: 100%;
+    text-align: center;
+    font-family: fantasy;
+    font-size: 22px;
+    color: #dafbff;
+}
+
+#main_table {
+    margin: 40px auto;
+    border-collapse: collapse;
+    background-color: #1a1a1a;
+    border: 2px solid #333;
+    box-shadow: 0 0 10px #000;
+}
+
+#main_table td {
+    padding: 20px;
+    vertical-align: center;
+}
+
+form {
+    background-color: #181818;
+    border: 1px solid #333;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+form fieldset {
+    border: 1px solid #444;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+legend {
+    color: #c2f9ff;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    background-color: #222;
+    color: #e0e0e0;
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin: 5px;
+}
+
+button {
+    background-color: #07323e;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #002529;
+}
+
+#res_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #181818;
+}
+
+#res_table th, #res_table td {
+    border: 1px solid #333;
+    padding: 8px;
+    text-align: center;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    max-width: 300px;
+}
+
+#res_table tr:hover td {
+    background-color: #2a2a2a;
+}
+
+svg {
+    border: 2px solid #333;
+    border-radius: 10px;
+}

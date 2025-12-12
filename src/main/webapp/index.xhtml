@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="jakarta.faces.core"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="primefaces">
+<f:view>
+    <h:head>
+        <title>web3</title>
+        <link rel="stylesheet" href="style/main.css"/>
+    </h:head>
+    <h:body>
+        <header>
+            <table id="header-table" class="layout-table">
+                <tr>
+                    <td><p>Захарченко<br/>Андрей<br/>Сергеевич</p></td>
+                    <td><p>Группа: <br/>P3214</p></td>
+                    <td><p>Вариант: <br/>465951</p></td>
+                </tr>
+            </table>
+        </header>
+        <table id="main_table" class="layout-table">
+            <tr>
+                <td>
+                    <p:poll interval="6" update="clock"/>
+                    <h:outputText id="clock" value="#{clock.now}">
+                        <f:convertDateTime type="localDateTime" pattern="dd.MM.yyyy HH:mm:ss"/>
+                    </h:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td>
+<!--                    <a href="form.xhtml">форма</a>-->
+                    <h:form>
+                        <h:commandButton value="форма" action="fff"/>
+                    </h:form>
+                </td>
+            </tr>
+        </table>
+    </h:body>
+</f:view>
+</html>

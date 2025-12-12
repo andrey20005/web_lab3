@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group = 'com.andey20005.web3'
+version = '1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    // https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-web-api
+//    compileOnly 'jakarta.platform:jakarta.jakartaee-web-api:10.0.0'
+    // https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-web-api
+    compileOnly 'jakarta.platform:jakarta.jakartaee-web-api:11.0.0'
+
+    implementation 'org.primefaces:primefaces:15.0.0:jakarta'
+//    implementation 'org.primefaces:primefaces-themes:15.0.10'
+}
+
+test {
+    useJUnitPlatform()
+}

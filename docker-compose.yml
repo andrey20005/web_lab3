@@ -1,0 +1,11 @@
+services:
+  wildfly:
+    image: quay.io/wildfly/wildfly
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./build/libs/web_lab3-1.war:/opt/jboss/wildfly/standalone/deployments/web3.war
+    networks:
+      backend:
+networks:
+  backend:
