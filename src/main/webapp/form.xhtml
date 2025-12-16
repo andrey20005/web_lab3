@@ -112,6 +112,33 @@
                     </h:form>
                 </td>
             </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="res_table">
+                                    <tr class="table-header">
+                                        <th>time</th>
+                                        <th>X</th>
+                                        <th>Y</th>
+                                        <th>R</th>
+                                        <th>Res</th>
+                                    </tr>
+
+                                    <ui:repeat value="#{table.points}" var="p" varStatus="ps">
+                                        <tr>
+                                            <td>
+                                                <h:outputText value="#{table.points[table.points.size() - 1 - ps.index].time}">
+                                                    <f:convertDateTime type="localDateTime" pattern="dd.MM.yyyy HH:mm:ss"/>
+                                                </h:outputText>
+                                            </td>
+                                            <td>#{table.points[table.points.size() - 1 - ps.index].x}</td>
+                                            <td>#{table.points[table.points.size() - 1 - ps.index].y}</td>
+                                            <td>#{table.points[table.points.size() - 1 - ps.index].r}</td>
+                                            <td>#{table.points[table.points.size() - 1 - ps.index].hit}</td>
+                                        </tr>
+                                    </ui:repeat>
+                                </table>
+                            </td>
+                        </tr>
         </table>
     </h:body>
 </f:view>

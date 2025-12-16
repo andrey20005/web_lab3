@@ -39,4 +39,20 @@ public class Point implements Serializable {
     public void setTime(LocalDateTime time) {
         this.time = time;
     }
+
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public double getR() {
+        return r;
+    }
+
+    public boolean getHit() {
+        return hit;
+    }
 }

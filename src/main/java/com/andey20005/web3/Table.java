@@ -6,13 +6,12 @@ import jakarta.inject.Named;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
-@Named()
+@Named
 @SessionScoped
 public class Table implements Serializable {
-    private List<Point> points = new ArrayList<>();
+    private final List<Point> points = new ArrayList<>();
 
     public void addPoint(Point point) {
         point.time = LocalDateTime.now();
