@@ -1,16 +1,23 @@
 package com.andey20005.web3;
 
 import com.andey20005.web3.Area.Area;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+@Entity
 public class Point implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     public double x;
     public double y;
     public double r;
-    public boolean hit;
-    public LocalDateTime time;
+    public boolean hit = false;
+    public LocalDateTime time = LocalDateTime.now();
+
+    public Point() {}
 
     public Point(double x, double y, double r, Area area) {
         this.x = x;
@@ -32,27 +39,21 @@ public class Point implements Serializable {
         this.hit = hit;
     }
 
-    public LocalDateTime getTime() {
-        return time;
-    }
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    public void setTime(LocalDateTime time) {
-        this.time = time;
-    }
+    public double getX() { return x; }
+    public void setX(double x) { this.x = x; }
 
-    public double getX() {
-        return x;
-    }
+    public double getY() { return y; }
+    public void setY(double y) { this.y = y; }
 
-    public double getY() {
-        return y;
-    }
+    public double getR() { return r; }
+    public void setR(double r) { this.r = r; }
 
-    public double getR() {
-        return r;
-    }
+    public boolean isHit() { return hit; }
+    public void setHit(boolean hit) { this.hit = hit; }
 
-    public boolean getHit() {
-        return hit;
-    }
+    public LocalDateTime getTime() { return time; }
+    public void setTime(LocalDateTime time) { this.time = time; }
 }

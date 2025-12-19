@@ -1,7 +1,10 @@
 package com.andey20005.web3;
 
+import jakarta.ejb.Stateless;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Named;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

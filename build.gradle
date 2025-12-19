@@ -16,12 +16,16 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
     // https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-web-api
-//    compileOnly 'jakarta.platform:jakarta.jakartaee-web-api:10.0.0'
-    // https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-web-api
-    compileOnly 'jakarta.platform:jakarta.jakartaee-web-api:11.0.0'
+    compileOnly 'jakarta.platform:jakarta.jakartaee-api:11.0.0'
+
+    // https://mvnrepository.com/artifact/org.apache.derby/derbyclient
+    implementation 'org.apache.derby:derbyclient:10.17.1.0'
+
+    // https://mvnrepository.com/artifact/org.eclipse.persistence/eclipselink
+    implementation 'org.eclipse.persistence:eclipselink:4.0.8'
 
     implementation 'org.primefaces:primefaces:15.0.0:jakarta'
-//    implementation 'org.primefaces:primefaces-themes:15.0.10'
+    implementation 'org.primefaces:primefaces-themes:15.0.10'
 }
 
 test {
