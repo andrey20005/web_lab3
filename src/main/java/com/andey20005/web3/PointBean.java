@@ -40,6 +40,7 @@ public class PointBean implements Serializable {
     private Table table;
 
     public void submit() {
+        System.out.println("пробуем записать");
         table.addPoint(new Point(x, y, r, area));
         System.out.println("произошла запись x=" + x + " y=" + y + " r=" + r);
     }
