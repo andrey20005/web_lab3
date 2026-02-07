@@ -1,10 +1,7 @@
 package com.andey20005.web3;
 
-import jakarta.ejb.Stateless;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Named;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -17,7 +14,7 @@ public class Table implements Serializable {
     private final List<Point> points = new ArrayList<>();
 
     public void addPoint(Point point) {
-        point.time = LocalDateTime.now();
+        point.setCreatedAt(LocalDateTime.now());
         points.add(point);
     }
 

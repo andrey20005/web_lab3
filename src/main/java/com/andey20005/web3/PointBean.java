@@ -2,8 +2,6 @@ package com.andey20005.web3;
 
 import com.andey20005.web3.Area.*;
 import jakarta.enterprise.context.RequestScoped;
-import jakarta.enterprise.context.SessionScoped;
-import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 

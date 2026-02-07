@@ -2,20 +2,33 @@ package com.andey20005.web3;
 
 import com.andey20005.web3.Area.Area;
 import jakarta.persistence.*;
+import jakarta.persistence.Table;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "points")
 public class Point implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(updatable = false, nullable = false)
     private Long id;
-    public double x;
-    public double y;
-    public double r;
-    public boolean hit = false;
-    public LocalDateTime time = LocalDateTime.now();
+
+    @Column(nullable = false)
+    private double x;
+
+    @Column(nullable = false)
+    private double y;
+
+    @Column(nullable = false)
+    private double r;
+
+    @Column(nullable = false)
+    private boolean hit = false;
+
+    @Column(nullable = false, updatable = false)
+    private LocalDateTime createdAt = LocalDateTime.now();
 
     public Point() {}
 
@@ -54,6 +67,6 @@ public class Point implements Serializable {
     public boolean isHit() { return hit; }
     public void setHit(boolean hit) { this.hit = hit; }
 
-    public LocalDateTime getTime() { return time; }
-    public void setTime(LocalDateTime time) { this.time = time; }
+    public LocalDateTime getCreatedAt() { return createdAt; }
+    public void setCreatedAt(LocalDateTime time) { this.createdAt = time; }
 }
