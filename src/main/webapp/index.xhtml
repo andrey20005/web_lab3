@@ -3,7 +3,7 @@
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="jakarta.faces.core"
       xmlns:h="jakarta.faces.html"
-      xmlns:pp="primefaces">
+      xmlns:p="primefaces">
 <f:view>
     <h:head>
         <title>web3</title>
@@ -22,7 +22,7 @@
         <table id="main_table" class="layout-table">
             <tr>
                 <td>
-                    <pp:poll interval="6" update="clock"/>
+                    <p:poll interval="6" update="clock"/>
                     <h:outputText id="clock" value="#{clock.now}">
                         <f:convertDateTime type="localDateTime" pattern="dd.MM.yyyy HH:mm:ss"/>
                     </h:outputText>
