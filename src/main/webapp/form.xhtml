@@ -4,7 +4,8 @@
       xmlns:f="jakarta.faces.core"
       xmlns:h="jakarta.faces.html"
       xmlns:ui="jakarta.faces.facelets"
-      xmlns:p="primefaces">
+      xmlns:p="primefaces"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
 <f:view>
     <h:head>
         <title>web3</title>
@@ -123,17 +124,18 @@
                                         <th>Res</th>
                                     </tr>
 
-                                    <ui:repeat value="#{table.points}" var="p" varStatus="ps">
+                                    <c:set var="points" value="#{table.points}" scope="request" />
+                                    <ui:repeat value="#{points}" var="p" varStatus="ps">
                                         <tr>
                                             <td>
-                                                <h:outputText value="#{table.points[table.points.size() - 1 - ps.index].createdAt}">
+                                                <h:outputText value="#{points[ps.index].createdAt}">
                                                     <f:convertDateTime type="localDateTime" pattern="dd.MM.yyyy HH:mm:ss"/>
                                                 </h:outputText>
                                             </td>
-                                            <td>#{table.points[table.points.size() - 1 - ps.index].x}</td>
-                                            <td>#{table.points[table.points.size() - 1 - ps.index].y}</td>
-                                            <td>#{table.points[table.points.size() - 1 - ps.index].r}</td>
-                                            <td>#{table.points[table.points.size() - 1 - ps.index].hit}</td>
+                                            <td>#{points[ps.index].x}</td>
+                                            <td>#{points[ps.index].y}</td>
+                                            <td>#{points[ps.index].r}</td>
+                                            <td>#{points[ps.index].hit}</td>
                                         </tr>
                                     </ui:repeat>
                                 </table>

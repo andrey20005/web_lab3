@@ -5,7 +5,7 @@ import jakarta.inject.Named;
 
 import java.time.LocalDateTime;
 
-//@Named
+@Named
 @ApplicationScoped
 public class Clock {
     public LocalDateTime getNow() {

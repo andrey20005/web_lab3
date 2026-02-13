@@ -1,7 +1,8 @@
 package com.andey20005.web3;
 
 import com.andey20005.web3.Area.*;
-import jakarta.enterprise.context.RequestScoped;
+import jakarta.enterprise.context.SessionScoped;
+import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 
@@ -9,7 +10,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 @Named
-@RequestScoped
+@SessionScoped
 public class PointBean implements Serializable {
     private double x = 0;
     private double y = 0;
@@ -40,7 +41,6 @@ public class PointBean implements Serializable {
     private Table table;
 
     public void submit() {
-        System.out.println("пробуем записать");
         table.addPoint(new Point(x, y, r, area));
         System.out.println("произошла запись x=" + x + " y=" + y + " r=" + r);
     }
