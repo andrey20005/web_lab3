@@ -15,7 +15,7 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-    compileOnly 'jakarta.platform:jakarta.jakartaee-api:10.0.0'
+    providedCompile 'jakarta.platform:jakarta.jakartaee-api:10.0.0'
 
     implementation 'org.primefaces:primefaces:15.0.0:jakarta'
 }
