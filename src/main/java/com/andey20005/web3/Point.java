@@ -69,4 +69,9 @@ public class Point implements Serializable {
 
     public LocalDateTime getCreatedAt() { return createdAt; }
     public void setCreatedAt(LocalDateTime time) { this.createdAt = time; }
+
+    @Override
+    public String toString() {
+        return "p: x = " + this.getX() + ", y = " + this.getY() + ", r = " + this.getR() + ", hit = " + this.isHit() + ", time = " + this.getCreatedAt();
+    }
 }
