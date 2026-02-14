@@ -30,7 +30,8 @@ import java.util.regex.Pattern;
 public class MailChecker {
     private static final String MAIL_HOST = "imap.yandex.ru";
     private static final String MAIL_USER = "andr-for-tests@yandex.ru";
-    private static final String MAIL_PASSWORD = System.getProperty("MailChecker.mailPassword", "fallback_password_for_dev");
+    // set JAVA_OPTS=-DMailChecker.mailPassword=...
+    private static final String MAIL_PASSWORD = "...";
 
     private ScheduledExecutorService scheduler;
 

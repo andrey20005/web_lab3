@@ -113,34 +113,35 @@
                     </h:form>
                 </td>
             </tr>
-                        <tr>
-                            <td colspan="2">
-                                <table id="res_table">
-                                    <tr class="table-header">
-                                        <th>time</th>
-                                        <th>X</th>
-                                        <th>Y</th>
-                                        <th>R</th>
-                                        <th>Res</th>
-                                    </tr>
-
-                                    <c:set var="points" value="#{table.points}" scope="request" />
-                                    <ui:repeat value="#{points}" var="p" varStatus="ps">
-                                        <tr>
-                                            <td>
-                                                <h:outputText value="#{points[ps.index].createdAt}">
-                                                    <f:convertDateTime type="localDateTime" pattern="dd.MM.yyyy HH:mm:ss"/>
-                                                </h:outputText>
-                                            </td>
-                                            <td>#{points[ps.index].x}</td>
-                                            <td>#{points[ps.index].y}</td>
-                                            <td>#{points[ps.index].r}</td>
-                                            <td>#{points[ps.index].hit}</td>
-                                        </tr>
-                                    </ui:repeat>
-                                </table>
-                            </td>
-                        </tr>
+                <tr>
+                    <td colspan="2">
+                        <p:poll interval="20" update="res_table"/>
+                        <h:dataTable value="#{table.points}" var="point" id="res_table">
+                            <h:column>
+                                <f:facet name="header">время создания</f:facet>
+                                <h:outputText value="#{point.createdAt}">
+                                    <f:convertDateTime type="localDateTime" pattern="dd.MM.yyyy HH:mm:ss"/>
+                                </h:outputText>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">X</f:facet>
+                                #{point.x}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Y</f:facet>
+                                #{point.y}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">R</f:facet>
+                                #{point.r}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">попадание</f:facet>
+                                #{point.hit}
+                            </h:column>
+                        </h:dataTable>
+                    </td>
+                </tr>
         </table>
     </h:body>
 </f:view>
